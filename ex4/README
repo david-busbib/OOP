@@ -1,0 +1,24 @@
+dbusbib123,tsvi_18
+336224076,666011572
+
+To organize the functionality of the 'trees' package, we've opted to allocate specific responsibilities
+to different classes. As a result, we have four classes, each designed to handle distinct tasks.
+Tree Class: This class extends a game object and serves to represent the trunk of a tree.
+When added to the screen, it displays a brown trunk.We've modified its update function to
+change the trunk's color when the avatar jumps.
+Fruit Class: Extending the gameObject class, this class represents a fruit,
+which can be either red or yellow. We've modified its update function to change the fruit's
+color when the avatar jumps. This is achieved through callbacks implemented in the avatar class.
+Leaf Class: Representing an individual leaf, this class also extends the gameObject class.
+ We've modified its update function to turn  the leaf's 90d  when the avatar jumps.
+Flora Class: Acting as a "factory of trees," this class offers three public methods:
+updateClasses: This method accepts a boolean parameter and updates each class (as described above)
+ if necessary.
+createInRange: Returns a list of trunks to be added to the game object.
+createLeafsAndFruit: Returns a list containing two inner lists: one representing fruits
+and the other representing leaves. This method takes a point as input,
+creating a circle around that point and randomly placing fruits and leaves within it (ensuring they don't
+ overlap).
+
+In our implementation, we utilize the strategy design pattern. This allows us to dynamically
+switch strategies at runtime, ensuring different actions are taken for each avatar movement.
